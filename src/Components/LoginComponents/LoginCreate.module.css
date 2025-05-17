@@ -1,0 +1,16 @@
+.registerContainer {
+  min-height: 100dvh;
+}
+
+.register {
+  width: 100%;
+  padding: 2rem;
+}
+
+.formRegister {
+  margin-bottom: 2rem;
+
+  button {
+    margin-bottom: 1rem;
+  }
+}

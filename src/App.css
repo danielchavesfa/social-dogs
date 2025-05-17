@@ -1,0 +1,124 @@
+:root {
+  --font-primary: Helvetica, Arial, sans-serif;
+  --font-second: Georgia;
+
+  --btn-c1: #ffbb11;
+  --btn-c2: #764701;
+  --btn-c3: #ffeeaa;
+  --error: #f31;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: #333;
+  padding-top: 4rem;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 10rem);
+}
+
+.AppBody {
+  flex: 1;
+}
+
+.container {
+  max-width: 50rem;
+  padding: 0 .5rem;
+  margin: 0 auto;
+}
+
+.containerTitle {
+  font-family: var(--font-second);
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.containerTitle::after {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #fb1;
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  border-radius: .2rem;
+  z-index: -1;
+}
+
+.mainContainer {
+  margin-top: 2rem;
+}
+
+.anime {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: animeLeft .3s ease forwards;
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+.forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100dvh;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.forms::before {
+  content: '';
+  display: block;
+  background: url('./assets/login.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.VictoryContainer {
+  height: initial !important;
+}
+
+@media (max-width: 40rem) {
+  .forms {
+    grid-template-columns: 1fr;
+  }
+
+  .forms .container {
+    padding: 1rem;
+  }
+
+  .forms::before {
+    display: none;
+  }
+}
